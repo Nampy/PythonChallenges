@@ -1,6 +1,8 @@
+import collections
+
 if __name__ == '__main__':
     char_strings = ""
     for line in open("challenge3SpecialChar.txt"):
-        print (char_strings.count("@"))
-        char_strings += line
-    print(min(char_strings))
+        char_strings += line.strip("\n")
+    list_occ = collections.Counter(char_strings).most_common()
+    print(collections.Counter(char_strings).most_common())
